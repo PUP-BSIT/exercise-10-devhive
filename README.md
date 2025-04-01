@@ -4,13 +4,24 @@
 
 ### 🚀 A Collaborative Hub for Web Development  
 
-🌐 **Main Website:** [Coming Soon](https://your-main-website.netlify.app)  
-📄 **Individual Web Page:** [Coming Soon](https://your-individual-page.netlify.app)  
+🌐 **Main Website:**
+
+[![Netlify](https://img.shields.io/badge/Netlify-DevHive's%20Website-00C7B7?style=for-the-badge&logo=netlify&labelColor=0D0D0D)](https://devhive-pupt.netlify.app/)
+
+📄 **Individual Web Pages:**  
+
+[![Alejandro](https://img.shields.io/badge/-Alejandro-00C7B7?style=for-the-badge&logo=netlify&labelColor=0D0D0D)](https://devhive-pupt.netlify.app/alejandro_aleckmcklaiyre/)  
+[![Esparagoza](https://img.shields.io/badge/-Esparagoza-00C7B7?style=for-the-badge&logo=netlify&labelColor=0D0D0D)](https://devhive-pupt.netlify.app/esparagoza_mikkakette/)  
+[![Genandoy](https://img.shields.io/badge/-Genandoy-00C7B7?style=for-the-badge&logo=netlify&labelColor=0D0D0D)](https://devhive-pupt.netlify.app/genandoy_hannahlorainne/)  
+[![Mejares](https://img.shields.io/badge/-Mejares-00C7B7?style=for-the-badge&logo=netlify&labelColor=0D0D0D)](https://devhive-pupt.netlify.app/mejares_jamesmichael/)  
+
 
 ---
 
 ## 📌 About DevHive  
-Welcome to **DevHive's** Github Repository! We are a group of dedicated students that creates beautiful functional websites for our course subject Web Development!
+Welcome to **DevHive's** Github Repository! We are a group of dedicated students 
+that creates beautiful functional websites for our course subject 
+Web Development!
 
 ---
 
@@ -25,9 +36,3 @@ Welcome to **DevHive's** Github Repository! We are a group of dedicated students
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/T2yDjpVo)
 </div>
-
-
-
-
-
-
