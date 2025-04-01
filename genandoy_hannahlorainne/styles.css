@@ -394,3 +394,93 @@ footer:before {
     max-height: fit-content;    
     max-height: fit-content;
 }
+
+.sort-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    border: 2px solid #553847;
+}
+
+.sort-controls span {
+    font-size: 0.6rem;
+    color: #553847;
+}
+
+.sort-controls button {
+    padding: 8px 12px;
+    font-size: 0.6rem;
+    background-color: #73BF2E;
+    border: none;
+    color: #553847;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 3px 0 #2C9100, 0 4px 3px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.sort-controls button:hover {
+    background-color: #8CD846;
+}
+
+.sort-controls button:active {
+    transform: translateY(3px);
+    box-shadow: 0 0 0 #2C9100, 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.sort-controls button.active {
+    background-color: #FED700;
+    box-shadow: 0 3px 0 #D8A903, 0 4px 3px rgba(0, 0, 0, 0.2);
+}
+
+#comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    border: 2px dashed #db1822;
+}
+
+#comments-container p {
+    padding: 10px 15px;
+    background-color: white;
+    border-radius: 8px;
+    border-left: 4px solid #da1414;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.7rem;
+    text-align: left;
+    margin: 0;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+#comments-container p:hover {
+    transform: translateX(5px);
+    border-left: 4px solid #E84A3C;
+}
+
+#comments-container p::after {
+    content: attr(data-formatted-date);
+    position: absolute;
+    top: -8px;
+    right: 10px;
+    padding: 3px 6px;
+    background-color: #e06363;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#comments-container p:hover::after {
+    opacity: 1;
+}
