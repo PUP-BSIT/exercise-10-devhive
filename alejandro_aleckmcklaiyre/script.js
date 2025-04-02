@@ -1,38 +1,77 @@
-function checkform() {
-  let form = document.forms["comment-form"].elements;
-  let fieldsMustBeFilled = true;
+let commentForm = document.querySelector(".comment-form");
+let nameInput = document.getElementById("name");
+let commentInput = document.getElementById("comment-text");
+let submitBtn = document.getElementById("submit_btn");
+let commentsSection = document.querySelector(".comment-list ul");
+let ascendBtn = document.querySelector(".assend");
+let descendBtn = document.querySelector(".descend");
+let initialComments = commentsSection.querySelectorAll("li");
+let comments = [];
 
-  for (let i = 0; i < form.length; i++) {
-    if (
-      (form[i].tagName === "INPUT" || form[i].tagName === "TEXTAREA") &&
-      !form[i].value.trim()
-    ) {
-      fieldsMustBeFilled = false;
-    }
-  }
+function addTimestampsToExistingComments() {
+  initialComments.forEach((comment, index) => {
+    let text = comment.textContent;
+    let parts = text.split(" - ");
+    let baseTime = new Date("2025-03-19T22:35:09").getTime();
+    let commentDate = new Date(baseTime + index * 60000);
 
-  let submitBtn = document.getElementById("submit_btn");
-  submitBtn.disabled = !fieldsMustBeFilled;
-  submitBtn.style.backgroundColor = fieldsMustBeFilled ? "#2d3e42" : "";
+    comments.push({
+      text: parts[0],
+      name: parts[1],
+      date: commentDate,
+      element: comment,
+    });
+
+    comment.textContent = `${parts[0]} - ${parts[1]} (${formatDate(
+      commentDate
+    )})`;
+    comment.setAttribute("data-date", commentDate.getTime());
+  });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  let commentForm = document.querySelector(".comment-form");
-  let commentsSection = document.querySelector(".comment-list ul");
+function validateForm() {
+  let isValid = nameInput.value.trim() && commentInput.value.trim();
+  submitBtn.disabled = !isValid;
+  submitBtn.style.backgroundColor = isValid ? "#2d3e42" : "";
+}
 
-  commentForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+function formatDate(date) {
+  return date.toLocaleString([]);
+}
 
-    let name = document.getElementById("name").value.trim();
-    let comment = document.getElementById("comment-text").value.trim();
+function sortComments(direction) {
+  comments.sort((a, b) =>
+    direction === "asc" ? a.date - b.date : b.date - a.date
+  );
+  comments.forEach((item) => commentsSection.appendChild(item.element));
+}
 
-    if (!name || !comment) return;
-
-    let newComment = document.createElement("li");
-    newComment.textContent = `${comment} - ${name}`;
-    commentsSection.appendChild(newComment);
-
-    commentForm.reset();
-    checkform();
+function addComment(event) {
+  event.preventDefault();
+  let name = nameInput.value.trim();
+  let text = commentInput.value.trim();
+  if (!name || !text) return;
+  let currentDate = new Date();
+  let newComment = document.createElement("li");
+  newComment.textContent = `${text} - ${name} (${formatDate(currentDate)})`;
+  newComment.setAttribute("data-date", currentDate.getTime());
+  commentsSection.appendChild(newComment);
+  comments.push({
+    text,
+    name,
+    date: currentDate,
+    element: newComment,
   });
-});
+  commentForm.reset();
+  validateForm();
+}
+
+[nameInput, commentInput].forEach((input) =>
+  input.addEventListener("input", validateForm)
+);
+commentForm.addEventListener("submit", addComment);
+ascendBtn.addEventListener("click", () => sortComments("asc"));
+descendBtn.addEventListener("click", () => sortComments("desc"));
+
+addTimestampsToExistingComments();
+validateForm();
