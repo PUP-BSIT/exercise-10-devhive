@@ -172,6 +172,75 @@ img {
     margin-bottom: 15px;
 }
 
+.comments-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.comments-container p {
+    text-align: left;
+    background: rgba(140, 130, 130, 0.825);
+    border-radius: 8px;
+    padding: 12px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.comments-container p:hover {
+    background: rgb(0, 0, 0);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    color: rgb(255, 255, 255);
+}
+
+.sort-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    gap: 10px;
+}
+
+.sort-controls span {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.sort-controls button {
+    background: #434343;
+    color: #ffffff;
+    border: 1px solid #7a0000;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sort-controls button:hover {
+    background: #7a0000;
+}
+
+.sort-controls button.active {
+    background: #7a0000;
+    color: white;
+}
+
+#commenter-comment {
+    resize: vertical;
+    min-height: 80px;
+    text-align: left;
+}
+
+.comments-container.empty::before {
+    content: "No comments yet. Be the first to comment!";
+    display: block;
+    text-align: center;
+    color: #aaa;
+    font-style: italic;
+    padding: 20px;
+}
+
 @media (max-width: 768px) {
     .container,
     #about,
