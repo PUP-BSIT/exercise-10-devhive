@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const bTime = new Date(b.date);
             return isAscending ? aTime - bTime : bTime - aTime;
         });
-        const commentElements = document.querySelectorAll(".comment-message");
         commentContainer.innerHTML = "";
 
         comments.forEach(comment => {

@@ -63,7 +63,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
     function toggleButton() {
-    commentButton.disabled = !(nameInput.value.trim() && commentInput.value.trim());
+    commentButton.disabled = !(nameInput.value.trim() 
+        && commentInput.value.trim());
     }
     
     nameInput.addEventListener("input", toggleButton);
@@ -83,7 +84,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     const newComment = document.createElement("p");
-    newComment.textContent = `${nameInput.value}: ${commentInput.value} (${formattedDate})`;
+    newComment.textContent = `${nameInput.value}: ${commentInput.value} 
+        (${formattedDate})`;
     newComment.dataset.timestamp = timestamp;
     newComment.dataset.formattedDate = formattedDate;
 
@@ -96,13 +98,13 @@ document.addEventListener("DOMContentLoaded", function() {
     commentsContainer.classList.remove("empty");
     });
 
-    document.getElementById("sort-newest").addEventListener("click", function() {
+    document.getElementById("sort-newest").addEventListener("click", function(){
     document.getElementById("sort-newest").classList.add("active");
     document.getElementById("sort-oldest").classList.remove("active");
     sortComments("desc");
     });
     
-    document.getElementById("sort-oldest").addEventListener("click", function() {
+    document.getElementById("sort-oldest").addEventListener("click", function(){
     document.getElementById("sort-oldest").classList.add("active");
     document.getElementById("sort-newest").classList.remove("active");
     sortComments("asc");

@@ -129,21 +129,21 @@ ul {
 
 @media (max-width: 480px) {
     .cicada {
-        font-size: 10px;
+        font-size: 9px;
     }
 
     #header_page h1 {
-        font-size: 8rem;
+        font-size: 7rem;
     }
 
     #content_list {
-        width: 400px;
+        width: 360px;
     }
 }
 
 @media (max-width: 375px) {
     .cicada {
-        font-size: 7px;
+        font-size: 6px;
     }
 
     #header_page h1 {
