@@ -75,12 +75,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const timestamp = new Date().getTime();
     const date = new Date(timestamp);
     const formattedDate = date.toLocaleString("en-US", {
-        year: "numeric", 
-        month: "short", 
-        day: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true
+        year: "numeric", month: "short", day: "numeric", hour: "numeric",
+        minute: "2-digit", hour12: true
     });
 
     const newComment = document.createElement("p");
